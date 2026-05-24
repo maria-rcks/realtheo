@@ -54,5 +54,19 @@
       "regexFilter": "^https://yt3\\.(ggpht|googleusercontent)\\.com/Y6jut5A-dhWRlv7W81kGxVFPtZGjZN97IhBP75uLnx2AVV7ZEJUUUxBKHlFw9GcwILxkz1E_cLc.*",
       "resourceTypes": ["image"]
     }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "extensionPath": "/assets/youtube.com.jpg"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://static-cdn\\.jtvnw\\.net/jtv_user_pictures/a7f1c81b-6f00-41fc-8da9-18aabf169e75-profile_image-70x70\\.png(\\?.*)?$",
+      "resourceTypes": ["image"]
+    }
   }
 ]

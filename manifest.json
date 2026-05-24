@@ -10,7 +10,10 @@
     "*://www.youtube.com/*",
     "*://youtube.com/*",
     "*://m.youtube.com/*",
+    "*://www.twitch.tv/*",
+    "*://twitch.tv/*",
     "*://pbs.twimg.com/*",
+    "*://static-cdn.jtvnw.net/*",
     "*://avatars.githubusercontent.com/*",
     "*://yt3.ggpht.com/*",
     "*://yt3.googleusercontent.com/*"
@@ -31,7 +34,9 @@
         "*://twitter.com/*",
         "*://www.youtube.com/*",
         "*://youtube.com/*",
-        "*://m.youtube.com/*"
+        "*://m.youtube.com/*",
+        "*://www.twitch.tv/*",
+        "*://twitch.tv/*"
       ],
       "js": ["content.js"],
       "run_at": "document_start"
@@ -49,7 +54,9 @@
         "*://github.com/*",
         "*://www.youtube.com/*",
         "*://youtube.com/*",
-        "*://m.youtube.com/*"
+        "*://m.youtube.com/*",
+        "*://www.twitch.tv/*",
+        "*://twitch.tv/*"
       ]
     }
   ]

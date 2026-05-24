@@ -21,8 +21,15 @@
     ]
   };
 
+  const TWITCH = {
+    profileImageKeys: [
+      "a7f1c81b-6f00-41fc-8da9-18aabf169e75-profile_image-70x70.png"
+    ]
+  };
+
   const isX = /(^|\.)x\.com$|(^|\.)twitter\.com$/.test(location.hostname);
   const isYouTube = /(^|\.)youtube\.com$/.test(location.hostname);
+  const isTwitch = /(^|\.)twitch\.tv$/.test(location.hostname);
 
   function imageUrl(img) {
     return img.currentSrc || img.src || img.getAttribute("src") || "";
@@ -106,6 +113,13 @@
     return hasYouTubeHandleLink(img) && hasTheoTextNearby(img) && isProbablyAvatar(img);
   }
 
+  function shouldReplaceTwitch(img) {
+    const src = imageUrl(img);
+    if (!src || sameUrl(src, ASSETS.youtube)) return false;
+
+    return TWITCH.profileImageKeys.some((key) => src.includes(key));
+  }
+
   function replaceImage(img, replacement) {
     if (imageUrl(img) === replacement) return;
 
@@ -126,6 +140,11 @@
     }
 
     if (isYouTube && shouldReplaceYouTube(img)) {
+      replaceImage(img, ASSETS.youtube);
+      return;
+    }
+
+    if (isTwitch && shouldReplaceTwitch(img)) {
       replaceImage(img, ASSETS.youtube);
     }
   }
